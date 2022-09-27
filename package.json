@@ -1,0 +1,31 @@
+{
+  "name": "@multiotp/genotp",
+  "version": "1.0.3",
+  "description": "various OTP generator (HOTP, TOTP, mOTP)",
+  "main": "genotp.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/multiOTP/genotp.git"
+  },
+  "keywords": [
+    "HOTP",
+    "TOTP",
+    "mOTP"
+  ],
+  "author": "multiOTP (info@multiotp.net)",
+  "license": "LGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/multiOTP/genotp/issues"
+  },
+  "homepage": "https://github.com/multiOTP/genotp#readme",
+  "dependencies": {
+    "md5": "^2.3.0",
+    "node-otp": "^1.2.3"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
