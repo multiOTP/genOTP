@@ -2,6 +2,7 @@ var OTP = require('./genotp');
 var assert = require('assert');
 
 describe('OTP.generate', function () {
+
   let options = {
     algorithm: 'sha1', //sha1|sha256|sha512
     bias:      0,      // for TOTP and mOTP only, time bias, in seconds
@@ -28,8 +29,8 @@ describe('OTP.generate', function () {
   });
 
   const otp3 = new OTP();
-  it ('Check the first three values of the RFC4226 sample token', function () {
-    assert.equal(JSON.stringify(['755224', '287082', '359152']), JSON.stringify(otp3.generate({type: 'hotp', values: 3})));
+  it ('Check the first three values of the RFC4226 sample token with 8 digits', function () {
+    assert.equal(JSON.stringify(['84755224', '94287082', '37359152']), JSON.stringify(otp3.generate({type: 'hotp', digits: 8, values: 3})));
   });
 
 });

@@ -1,7 +1,7 @@
 {
   "name": "@multiotp/genotp",
-  "version": "1.0.5",
-  "description": "generic OTP generator (HOTP, TOTP, mOTP)",
+  "version": "1.0.8",
+  "description": "Generic 2FA OTP generator (OATH/HOTP, OATH/TOTP, mOTP)",
   "main": "genotp.js",
   "scripts": {
     "test": "mocha"
@@ -11,8 +11,10 @@
     "url": "git://github.com/multiOTP/genotp.git"
   },
   "keywords": [
-    "HOTP",
-    "TOTP",
+    "2FA",
+    "OTP",
+    "OATH/HOTP",
+    "OATH/TOTP",
     "mOTP"
   ],
   "author": "multiOTP (info@multiotp.net)",

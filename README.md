@@ -1,5 +1,5 @@
 # genotp
-generic OTP generator (HOTP, TOTP, mOTP)
+Generic 2FA OTP generator (OATH/HOTP, OATH/TOTP, mOTP)
 
 ```
 let options = {
