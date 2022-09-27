@@ -16,18 +16,20 @@ describe('OTP.generate', function () {
     values:    1,
   }
   
-  const otp = new OTP();
+  const otp = new OTP(options);
   it ('Check the first value of the RFC4226 sample token', function () {
-    assert.equal('755224', otp.generate({type: 'hotp'}));
+    assert.equal('755224', otp.generate());
     // assert.notEqual('000000', otp.generate());
   });
 
+  const otp2 = new OTP();
   it ('Check the first two values of the RFC4226 sample token', function () {
-    assert.equal(JSON.stringify(['755224', '287082']), JSON.stringify(otp.generate(2)));
+    assert.equal(JSON.stringify(['755224', '287082']), JSON.stringify(otp2.generate({type: 'hotp', secret: '3132333435363738393031323334353637383930', digits: 6, period: 30, values: 2})));
   });
 
+  const otp3 = new OTP();
   it ('Check the first three values of the RFC4226 sample token', function () {
-    assert.equal(JSON.stringify(['755224', '287082', '359152']), JSON.stringify(otp.generate({type: 'hotp', values: 3})));
+    assert.equal(JSON.stringify(['755224', '287082', '359152']), JSON.stringify(otp3.generate({type: 'hotp', values: 3})));
   });
 
 });
