@@ -1,7 +1,7 @@
 {
   "name": "@multiotp/genotp",
-  "version": "1.0.3",
-  "description": "various OTP generator (HOTP, TOTP, mOTP)",
+  "version": "1.0.4",
+  "description": "generic OTP generator (HOTP, TOTP, mOTP)",
   "main": "genotp.js",
   "scripts": {
     "test": "mocha"
