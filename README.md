@@ -1,6 +1,7 @@
 # genotp
 generic OTP generator (HOTP, TOTP, mOTP)
 
+```
 let options = {
   algorithm: 'sha1', //sha1|sha256|sha512
   bias:      0,      // for TOTP and mOTP only, time bias, in seconds
@@ -14,6 +15,9 @@ let options = {
   type:      'hotp', // totp|hotp|motp (otp type)
   values:    1,      // number of values to return (in an array if > 1)
 }
+```
   
+```
 const otp = new OTP(options);
 let code = otp.generate();
+```
