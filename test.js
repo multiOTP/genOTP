@@ -32,5 +32,8 @@ describe('OTP.generate', function () {
   it ('Check the first three values of the RFC4226 sample token with 8 digits', function () {
     assert.equal(JSON.stringify(['84755224', '94287082', '37359152']), JSON.stringify(otp3.generate({type: 'hotp', digits: 8, values: 3})));
   });
+  
+  const otp4 = new OTP();
+  console.log(otp4.generate({type: 'motp', pincode: '1234', secret: '5daa0f8f095d6258'}));
 
 });
