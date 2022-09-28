@@ -1,6 +1,6 @@
 {
   "name": "@multiotp/genotp",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Generic 2FA OTP generator (OATH/HOTP, OATH/TOTP, mOTP)",
   "main": "genotp.js",
   "scripts": {

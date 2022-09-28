@@ -1,4 +1,4 @@
-var OTP = require('./genotp');
+const OTP = require('./genotp');
 var assert = require('assert');
 
 describe('OTP.generate', function () {
@@ -24,16 +24,21 @@ describe('OTP.generate', function () {
   });
 
   const otp2 = new OTP();
-  it ('Check the first two values of the RFC4226 sample token', function () {
+  it ('Check the first two values of the RFC4226 sample token (hex token)', function () {
     assert.equal(JSON.stringify(['755224', '287082']), JSON.stringify(otp2.generate({type: 'hotp', secret: '3132333435363738393031323334353637383930', digits: 6, period: 30, values: 2})));
   });
 
   const otp3 = new OTP();
+  it ('Check the first two values of the RFC4226 sample token (binary token)', function () {
+    assert.equal(JSON.stringify(['755224', '287082']), JSON.stringify(otp2.generate({type: 'hotp', secret: '12345678901234567890', seedtype: 'bin', digits: 6, period: 30, values: 2})));
+  });
+
+  const otp4 = new OTP();
   it ('Check the first three values of the RFC4226 sample token with 8 digits', function () {
     assert.equal(JSON.stringify(['84755224', '94287082', '37359152']), JSON.stringify(otp3.generate({type: 'hotp', digits: 8, values: 3})));
   });
   
-  const otp4 = new OTP();
+  const otp5 = new OTP();
   console.log(otp4.generate({type: 'motp', pincode: '1234', secret: '5daa0f8f095d6258'}));
 
 });
