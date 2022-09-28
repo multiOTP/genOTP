@@ -35,7 +35,6 @@ let options = {
   counter:   0,      // HOTP counter
   digits:    6,      // 6|8   (number of digits)
   period:    30,     // 30|60 (for TOTP only, in seconds)
-  pin:       0,      // 0|1   (for mOTP only, 0: 4-digit, 1: alphanumeric)
   pincode:   '',     // for mOTP only
   secret:    '3132333435363738393031323334353637383930',
   seedtype:  'hex',  // hex|base32|bin (secret seed format)

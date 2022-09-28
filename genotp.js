@@ -33,11 +33,6 @@ function OTP(options = []) {
   } else {
     this.period = parseInt(options.period, 10);
   }
-  if (typeof options.pin == "undefined") {
-    this.pin = 0;
-  } else {
-    this.pin = parseInt(options.pin, 10);
-  }
   if (typeof options.pincode == "undefined") {
     this.pincode = "";
   } else {
@@ -89,9 +84,6 @@ OTP.prototype = {
         if (typeof options.period != "undefined") {
           this.period = parseInt(options.period, 10);
         }
-        if (typeof options.pin != "undefined") {
-          this.pin = parseInt(options.pin, 10);
-        }
         if (typeof options.pincode != "undefined") {
           this.pincode = options.pincode;
         }
@@ -124,9 +116,6 @@ OTP.prototype = {
     }
     if (isNaN(this.period)) {
       this.period = 30;
-    }
-    if (isNaN(this.pin)) {
-      this.pin = 0;
     }
     if (typeof this.pincode == "undefined") {
       this.pincode = "";
