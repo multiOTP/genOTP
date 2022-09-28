@@ -1,6 +1,6 @@
 {
   "name": "@multiotp/genotp",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Generic 2FA OTP generator (OATH/HOTP, OATH/TOTP, mOTP)",
   "main": "genotp.js",
   "scripts": {
@@ -15,7 +15,9 @@
     "OTP",
     "OATH/HOTP",
     "OATH/TOTP",
-    "mOTP"
+    "mOTP",
+    "one-time-password",
+    "google authenticator"
   ],
   "author": "multiOTP (info@multiotp.net)",
   "license": "LGPL-3.0-or-later",
