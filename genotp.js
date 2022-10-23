@@ -509,6 +509,14 @@ function OTP(options = []) {
 
 OTP.prototype = {
 
+  base32toHex: function(value) {
+    return bin2hex(uint8Array2bin(Base32.decode(value)));
+  },
+
+  hextoBase32: function(value) {
+    return Base32.encode(bin2Uint8Array(hex2bin(value)));
+  },
+
   generate: function(options) {
 
     if (typeof options != "undefined") {

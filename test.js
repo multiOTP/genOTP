@@ -4,7 +4,7 @@ var assert = require('assert');
 describe('OTP.generate', function () {
 
   let options = {
-    algorithm: 'sha1', //sha1 (sha1|sha256|sha512 will be implemented later)
+    algorithm: 'sha1', //sha1 (sha256|sha512 will be implemented later)
     bias:      0,      // for TOTP and mOTP only, time bias, in seconds
     counter:   0,      // HOTP counter
     digits:    6,      // 6|8   (number of digits)
@@ -17,6 +17,14 @@ describe('OTP.generate', function () {
   }
   
   const otp = new OTP(options);
+  it ('Check base32 to hex conversion', function () {
+    assert.equal('3132333435363738393031323334353637383930', otp.base32toHex('GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ'));
+  });
+
+  it ('Check hex to base32 conversion', function () {
+    assert.equal('GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ', otp.hextoBase32('3132333435363738393031323334353637383930'));
+  });
+
   it ('Check the first value of the RFC4226 sample token', function () {
     assert.equal('755224', otp.generate());
     // assert.notEqual('000000', otp.generate());
@@ -41,7 +49,7 @@ describe('OTP.generate', function () {
   it ('Check the first three values of the RFC4226 sample token with 8 digits', function () {
     assert.equal(JSON.stringify(['84755224', '94287082', '37359152']), JSON.stringify(otp4.generate({type: 'hotp', digits: 8, values: 3})));
   });
-  
+
   // const otp5 = new OTP();
   // console.log(otp5.generate({type: 'motp', pincode: '1234', secret: '5daa0f8f095d6258'}));
 
