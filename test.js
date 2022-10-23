@@ -4,7 +4,7 @@ var assert = require('assert');
 describe('OTP.generate', function () {
 
   let options = {
-    algorithm: 'sha1', //sha1|sha256|sha512
+    algorithm: 'sha1', //sha1 (sha1|sha256|sha512 will be implemented later)
     bias:      0,      // for TOTP and mOTP only, time bias, in seconds
     counter:   0,      // HOTP counter
     digits:    6,      // 6|8   (number of digits)
@@ -20,6 +20,11 @@ describe('OTP.generate', function () {
   it ('Check the first value of the RFC4226 sample token', function () {
     assert.equal('755224', otp.generate());
     // assert.notEqual('000000', otp.generate());
+  });
+
+  const otp1 = new OTP(options);
+  it ('Check the first value of the RFC4226 sample token (base32 token)', function () {
+    assert.equal('755224', otp1.generate({type: 'hotp', secret: 'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ' ,seedtype: 'base32', digits: 6, period: 30, values: 1}));
   });
 
   const otp2 = new OTP();

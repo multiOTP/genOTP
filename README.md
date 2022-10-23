@@ -30,7 +30,7 @@ npm install --save @multiotp/genotp
 const OTP = require('./genotp')
 
 let options = {
-  algorithm: 'sha1', //sha1|sha256|sha512
+  algorithm: 'sha1', //sha1 (sha1|sha256|sha512 will be implemented later)
   bias:      0,      // for TOTP and mOTP only, time bias, in seconds
   counter:   0,      // HOTP counter
   digits:    6,      // 6|8   (number of digits)
