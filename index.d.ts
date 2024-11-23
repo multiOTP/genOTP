@@ -1,7 +1,7 @@
 /**
  * Type definitions for @multiotp/genotp
  * Project: @multiotp/genotp
- * Definitions by: Your Name <your.email@example.com>
+ * Definitions by: Erik Metz (https://github.com/erik-metz)
  */
 
 declare module '@multiotp/genotp' {
